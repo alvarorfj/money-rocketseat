@@ -1,31 +1,16 @@
-import { useState } from 'react';
 import logoImg from '../../assets/logo.svg'
 import { Container, Content } from './styles'
-import Modal from 'react-modal'
 
-export function Header(){
-    const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
+interface HeaderProps {
+    handleOpenNewTransactionModal: () => void;
+}
 
-    function handleOpenNewTransactionModal(){
-        setIsNewTransactionModalOpen(true);
-    }
-
-    function handleCloseNewTransactionModal(){
-        setIsNewTransactionModalOpen(false);
-    }
-
+export function Header({handleOpenNewTransactionModal}: HeaderProps){
     return (
         <Container>
             <Content>
                 <img src={logoImg} alt="logo" />
                 <button onClick={handleOpenNewTransactionModal}>Nova Transação</button>
-
-                <Modal 
-                    isOpen={isNewTransactionModalOpen} 
-                    onRequestClose={handleCloseNewTransactionModal}>
-                    <h2>Cadastrar Transação</h2>
-                </Modal>
-
             </Content>
         </Container>
     )
