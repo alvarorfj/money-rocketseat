@@ -20,10 +20,12 @@ export function App() {
 
   return (
     <>
-      <Header handleOpenNewTransactionModal={handleOpenNewTransactionModal}></Header>
-      <Dashboard></Dashboard>
+      <Header handleOpenNewTransactionModal={handleOpenNewTransactionModal}/>
+      <Dashboard/>
       <GlobalStyle/>
-      <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestClose={handleCloseNewTransactionModal} />
+      <NewTransactionModal 
+        isOpen={isNewTransactionModalOpen} 
+        onRequestClose={handleCloseNewTransactionModal} />
     </>
   );
 }
